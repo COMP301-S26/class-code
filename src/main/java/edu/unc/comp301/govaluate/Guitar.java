@@ -4,6 +4,13 @@ package edu.unc.comp301.govaluate;
 public class Guitar extends AInstrument{
     private int numOfStrings;
 
+    /**
+     * This constructor makes the guitar
+     *
+     * @param name of the instrument
+     * @param material what it is made out of
+     * @param numOfStrings number fo strinngs avaialbe
+     */
     public Guitar(String name, String material, int numOfStrings) {
         super(name, material);
         this.numOfStrings = numOfStrings;

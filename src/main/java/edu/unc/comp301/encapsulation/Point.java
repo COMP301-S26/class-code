@@ -4,18 +4,19 @@ public class Point {
     private double x;
     private double y;
 
-    public Point(double x, double y) {
+    public Point(double x, double y){
         this.x = x;
         this.y = y;
     }
 
     public double getX() {
-        return this.x;
+        return x;
     }
 
     public double getY() {
-        return this.y;
+        return y;
     }
+
 
     public void setX(double x) {
         this.x = x;
@@ -33,6 +34,5 @@ public class Point {
     public double distanceTo(Point other) {
         return Math.sqrt((this.getX() - other.getX()) * (this.getX() - other.getX()) + (this.getY() - other.getY()) * (this.getY() - other.getY()));
     }
-
 
 }

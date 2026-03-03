@@ -8,8 +8,7 @@ public class DoubleTriangle implements Triangle {
     private double cx;
     private double cy;
 
-    public DoubleTriangle(double ax, double ay, double bx,
-                          double by, double cx, double cy) {
+    public DoubleTriangle(double ax,double ay,double bx,double by,double cx,double cy){
         this.ax = ax;
         this.ay = ay;
         this.bx = bx;
@@ -19,10 +18,20 @@ public class DoubleTriangle implements Triangle {
     }
 
     @Override
-    public String toString() {
-        return String.format("(%.2f,%.2f),(%.2f,%.2f),(%.2f,%.2f)", ax, ay, bx, by, cx, cy);        //alternatively        //return "(" + ax + "," + ay + "),(" + bx  + "," + by + "),(" + cx  + "," + cy + ")";
+    public String toString(){
+        return String.format("(%.1f,%.1f),(%.1f,%.1f),(%.1f,%.1f)", ax,ay,bx,by,cx,cy);
     }
 
+    @Override
+    public double getPerimeter() {
+        return distance(ax,ay,bx,by) + distance(bx,by,cx,cy) + distance(cx,cy,ax,ay);
+    }
+
+    private static double distance(double x1, double y1, double x2, double y2){
+        return Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    }
+
+    @Override
     public void transpose(double xDir, double yDir) {
         ax += xDir;
         ay += yDir;
@@ -31,14 +40,4 @@ public class DoubleTriangle implements Triangle {
         cx += xDir;
         cy += yDir;
     }
-
-    public double getPerimeter() {
-        double perimeter = distance(ax, ay, bx, by) + distance(bx, by, cx, cy) + distance(cx, cy, ax, ay);
-        return perimeter;
-    }
-
-    private static double distance(double x1, double y1, double x2, double y2) {
-        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-    }
-
 }
