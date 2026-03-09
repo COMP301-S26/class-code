@@ -14,6 +14,16 @@ public class MyLinkedList<E> implements MyList<E>, Iterable<E>{
     /* Keeps track of the list's size */
     private int size = 0;
 
+
+    /**
+     * The required iterable method to return a super secret iterator type.s
+     * @return myIterator
+     */
+    public Iterator<E> iterator(){
+        return new MySuperSecretEncapsulatedIterator();
+    }
+
+
     /**
      * Iterator implementation for our linked list.
      * Written as an inner class so we can easily access 
@@ -222,13 +232,6 @@ public class MyLinkedList<E> implements MyList<E>, Iterable<E>{
         return exists;                // collection was changed if elem existed
     }
 
-    /**
-     * The required iterable method to return a super secret iterator type.s
-     * @return myIterator
-     */
-    public Iterator<E> iterator(){
-        return new MySuperSecretEncapsulatedIterator();
-    }
 
 
 }

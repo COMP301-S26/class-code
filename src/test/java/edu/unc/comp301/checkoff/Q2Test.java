@@ -1,5 +1,6 @@
 package edu.unc.comp301.checkoff;
 
+import edu.unc.comp301.checkoff.checkoff1.Q2;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

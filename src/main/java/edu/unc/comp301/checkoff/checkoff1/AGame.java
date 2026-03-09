@@ -1,6 +1,5 @@
-package edu.unc.comp301.checkoff;
+package edu.unc.comp301.checkoff.checkoff1;
 
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
