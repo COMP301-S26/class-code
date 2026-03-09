@@ -7,7 +7,7 @@ package edu.unc.comp301.creational;
  * from client code and encourage creation through {@link Enemy}.
  * </p>
  */
-public class Boss implements Enemy {
+public class Boss extends Enemy {
 
     /**
      * Protected constructor to encourage creation through {@link Enemy}.
