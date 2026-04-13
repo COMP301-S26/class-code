@@ -1,10 +1,10 @@
 package edu.unc.comp301.decorator.tags;
 
-public class DiscountTag implements PriceTag{
+public class DiscountedPriceTag implements PriceTag {
     private PriceTag tag;
     private double discount;
 
-    public DiscountTag(PriceTag tag, double discount){
+    public DiscountedPriceTag(PriceTag tag, double discount){
         this.tag = tag;
         this.discount = discount;
     }
@@ -16,15 +16,10 @@ public class DiscountTag implements PriceTag{
 
     @Override
     public double getAmount() {
-        return Math.max(0,tag.getAmount()-discount);
-    }
-
-    @Override
-    public String toString(){
-        return String.format("$%.2f", this.getAmount());
+        return tag.getAmount() * (1-discount) ;
     }
 
     public PriceTag unwrap(){
-        return this.tag;
+        return tag.unwrap();
     }
 }

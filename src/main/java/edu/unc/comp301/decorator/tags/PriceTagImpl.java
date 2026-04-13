@@ -7,7 +7,6 @@ public class PriceTagImpl implements PriceTag{
         this.amount = amount;
     }
 
-
     @Override
     public void setAmount(double amount) {
         this.amount = amount;
@@ -21,10 +20,5 @@ public class PriceTagImpl implements PriceTag{
     @Override
     public PriceTag unwrap() {
         return this;
-    }
-
-    @Override
-    public String toString(){
-        return String.format("$%.2f", this.amount);
     }
 }
