@@ -7,4 +7,9 @@ public interface Model extends Subject {
     void swipeRight();
     void swipeUp();
     void swipeDown();
+    void reset();
+
+    int getScore();
+    int getBest();
+    int getTile(int row, int col);
 }

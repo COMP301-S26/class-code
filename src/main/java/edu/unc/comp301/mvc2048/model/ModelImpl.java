@@ -16,11 +16,7 @@ public class ModelImpl implements Model{
 
 
     public ModelImpl(){
-        for(int i=0; i<board.length;i++){
-            for(int j=0;j<board[i].length; j++){
-                board[i][j] = 0;
-            }
-        }
+        reset();
     }
 
     public int getScore(){
@@ -56,11 +52,20 @@ public class ModelImpl implements Model{
         observers.remove(o);
     }
 
+    //TODO:  Finish this one in class.
     public void reset() {
-        board = new int[4][4];
-        score = 0;
-        addRandomTile();
-        notifyObservers();
+       board = new int[4][4];
+        for(int i=0; i<board.length;i++){
+            for(int j=0;j<board[i].length; j++){
+                board[i][j] = 0;
+            }
+        }
+
+
+       score = 0;
+       best = 0;
+
+       addRandomTile();
     }
     @Override
     public void swipeLeft() {
