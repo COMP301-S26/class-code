@@ -9,7 +9,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class ScoreBoardView implements FXComponent{
-   private final Model model;
+    private final Model model;
 
     public ScoreBoardView(Model model){
         this.model = model;
@@ -19,7 +19,7 @@ public class ScoreBoardView implements FXComponent{
     public Parent render() {
         Pane scoreboard = new HBox();
         scoreboard.getStyleClass().add("scoreboard");
-        
+
         Pane logoContainer = new HBox();
         Label logo = new Label("2048");
         logo.getStyleClass().add("logo");
@@ -51,9 +51,6 @@ public class ScoreBoardView implements FXComponent{
         highScoreValue.getStyleClass().add("score-value");
         best.getChildren().add(highScoreValue);
         scoreboard.getChildren().add(best);
-
-
-
 
 
         return scoreboard;

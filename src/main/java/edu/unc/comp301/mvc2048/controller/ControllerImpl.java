@@ -2,13 +2,12 @@ package edu.unc.comp301.mvc2048.controller;
 
 import edu.unc.comp301.mvc2048.model.Model;
 
-public class ControllerImpl implements Controller {
+public class ControllerImpl implements Controller{
     private final Model model;
 
     public ControllerImpl(Model model){
         this.model = model;
     }
-
 
     @Override
     public void swipe(Direction d) {
@@ -29,8 +28,6 @@ public class ControllerImpl implements Controller {
                 throw new IllegalArgumentException();
         }
     }
-
-
 
     @Override
     public void reset() {

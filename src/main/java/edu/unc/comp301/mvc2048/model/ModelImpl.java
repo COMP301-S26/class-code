@@ -52,7 +52,6 @@ public class ModelImpl implements Model{
         observers.remove(o);
     }
 
-    //TODO:  Finish this one in class.
     public void reset() {
        board = new int[4][4];
         for(int i=0; i<board.length;i++){

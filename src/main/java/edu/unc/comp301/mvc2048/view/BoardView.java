@@ -12,15 +12,14 @@ public class BoardView implements FXComponent{
         this.model = model;
     }
 
-
     @Override
     public Parent render() {
         GridPane board = new GridPane();
         board.getStyleClass().add("board");
 
-        for(int i=0; i<4; i++){
-            for(int j=0; j<4;j++){
-                board.add(makeTile(model.getTile(i,j)), j, i);
+        for(int i=0; i<4;i++){
+            for(int j=0; j<4; j++){
+                board.add(makeTile(model.getTile(i,j)),j,i);
             }
         }
 
@@ -31,7 +30,7 @@ public class BoardView implements FXComponent{
         Label tile;
         if(num == 0){
             tile = new Label();
-        } else {
+        }else{
             tile = new Label("" + num);
         }
 
@@ -39,9 +38,5 @@ public class BoardView implements FXComponent{
         tile.getStyleClass().add("tile-" + num);
 
         return tile;
-
     }
-
-
-
 }

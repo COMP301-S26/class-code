@@ -7,8 +7,8 @@ import edu.unc.comp301.mvc2048.model.Model;
 import edu.unc.comp301.mvc2048.model.ModelImpl;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class AppLauncher2048 extends Application {
@@ -18,16 +18,15 @@ public class AppLauncher2048 extends Application {
         Controller controller = new ControllerImpl(model);
         View view = new View(stage, model);
 
-        stage.setTitle("2048");
+        stage.setTitle("Play 2048!");
 
-        Scene scene = new Scene(view.render(), 350, 450);
-        scene.getStylesheets().add("main.css");
+        Scene scene = new Scene(view.render(), 350,450);
 
         scene.setOnKeyPressed(event ->{
-            switch (event.getCode()){
+            switch(event.getCode()){
                 case UP:
-                controller.swipe(Direction.UP);
-                break;
+                    controller.swipe(Direction.UP);
+                    break;
                 case DOWN:
                     controller.swipe(Direction.DOWN);
                     break;
@@ -38,13 +37,12 @@ public class AppLauncher2048 extends Application {
                     controller.swipe(Direction.RIGHT);
                     break;
                 default:
-                    //Ignore all others
+                    //ignore all others
             }
         });
 
 
-
-
+        scene.getStylesheets().add("main.css");
         stage.setScene(scene);
         stage.show();
 
